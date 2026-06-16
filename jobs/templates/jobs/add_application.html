@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <h1 class="mb-4 fw-bold">
+        Add New Application
+    </h1>
+
+    <div class="card shadow border-0">
+
+        <div class="card-body p-4">
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Company Name
+                        </label>
+
+                        {{ form.company_name }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Status
+                        </label>
+
+                        {{ form.status }}
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Job Title
+                        </label>
+
+                        {{ form.job_title }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Job Location
+                        </label>
+
+                        {{ form.job_location }}
+                    </div>
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Applied Date
+                        </label>
+
+                        {{ form.applied_date }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label fw-semibold">
+                            Notes
+                        </label>
+
+                        {{ form.notes }}
+                    </div>
+
+                </div>
+
+                <div class="mt-4">
+
+                    <button type="submit"
+                            class="btn btn-primary px-4">
+                        Submit
+                    </button>
+
+                    <a href="/applications/"
+                       class="btn btn-secondary px-4 ms-2">
+                        Cancel
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
